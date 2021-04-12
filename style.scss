@@ -21,6 +21,8 @@ $primaire: #9356dc;
 $secondaire: #ff79da;
 $tertiaire: #99e2d0;
 $fond: #f2f2f2;
+$boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
+
 @mixin bandeauimage {
     height: 300px;
     background-position: center;
@@ -44,19 +46,123 @@ $fond: #f2f2f2;
 }
 @mixin buttonpurple {
     width: 200px;
-    height: 50px;                        
+    height: 50px;
+    position: relative;                        
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-image: linear-gradient(to top left, $primaire, $secondaire) ;
+    background-image: $boutonviolet;
     border-radius: 25px; 
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); 
 }
+
     body{
         margin: 0;  
-        font-family: 'roboto';     
+        font-family: 'roboto';
+        position: relative;
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color:rgba(20, 16, 16, 0.8);
+        }         
+        #loader {
+            display: block;
+            position: relative;            
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: $primaire;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: $secondaire;
+            -webkit-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;
+        }
+        #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: $tertiaire;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+        }
+        @-webkit-keyframes spin {
+            0%   {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes spin {
+            0%   {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        /*.loader{
+        height: 100%;
+        position: absolute;
+        top: 100px;
+        left: 250px;
+        border: 16px solid blue;
+        border-radius: 50%;
+        border-top: 16px solid blue ;
+        border-right: 16px solid green ;
+        border-bottom: 16px solid red;
+        border-left: 16px solid pink;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
     }
+    @-webkit-keyframes spin{
+        0%{-webkit-transform: rotate(0deg);}
+        100%{-webkit-transform: rotate(360deg);}
+    }
+    @keyframes spin{
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }*/   
+    }
+    
+
+   
     /*fleche sur page de menu des restaurants*/
     .fleche_retour{
         margin-left: 15px;
@@ -101,12 +207,14 @@ $fond: #f2f2f2;
                 font-weight: normal;
                 margin: 0;            
             }
-            .explorez {
-                @include buttonpurple
-            }
+            
             a {
+            
                 text-decoration: none;
                 color: white;
+                .explorez {
+                @include buttonpurple
+            }
             }
     }
     .fonctionnement{
@@ -123,7 +231,6 @@ $fond: #f2f2f2;
             .fonction{
                 display: flex;
                 align-items: center;
-                position: relative;
                 padding: 10px;
                 margin: 20px;
                 border-radius: 15px;
@@ -141,7 +248,7 @@ $fond: #f2f2f2;
                 background-color: $primaire;
                 width: 20px;
                 position: absolute;
-                left: -10px;
+                margin-left: -20px;
                 justify-content: center;
                 border-radius: 25px;
                 color: white;
@@ -240,7 +347,7 @@ $fond: #f2f2f2;
     }
     .menu{        
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;       
         background-color: $fond;
         border-radius: 40px 40px 0 0 ;
         margin-top: -50px ; 
@@ -293,12 +400,13 @@ $fond: #f2f2f2;
             } 
             .commander{
                 margin: 50px auto 60px ;
-                @include buttonpurple
-            }
+                @include buttonpurple;
             a {
                 text-decoration: none;
-                color: white;
+                color: white;                
+               }
             }
+            
     }
     
     footer{
