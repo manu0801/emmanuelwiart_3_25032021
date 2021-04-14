@@ -352,10 +352,10 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             animation: fadein 2s ease-in-out ;
         } 
         .plats{
-            animation: fadein 4s ease-in-out 1s;
+            animation: fadein 4s ease-in-out ;
         }
         .desserts{
-            animation: fadein 6s ease-in-out 2s ;
+            animation: fadein 6s ease-in-out  ;
         }
         @keyframes fadein {
             from{opacity: 0;}

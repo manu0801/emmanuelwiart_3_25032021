@@ -449,13 +449,13 @@ body #preloader #loader:after {
 }
 
 .menu .plats {
-  -webkit-animation: fadein 4s ease-in-out 1s;
-          animation: fadein 4s ease-in-out 1s;
+  -webkit-animation: fadein 4s ease-in-out;
+          animation: fadein 4s ease-in-out;
 }
 
 .menu .desserts {
-  -webkit-animation: fadein 6s ease-in-out 2s;
-          animation: fadein 6s ease-in-out 2s;
+  -webkit-animation: fadein 6s ease-in-out;
+          animation: fadein 6s ease-in-out;
 }
 
 @-webkit-keyframes fadein {
