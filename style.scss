@@ -61,6 +61,13 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
     background-image: $boutonvioletclair;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
+@mixin traitvert{
+    width: 60px;
+    padding-bottom: 8px;
+    font-family: 'roboto';
+    font-weight: lighter;
+    border-bottom: 4px solid $tertiaire;
+}
     body{
         margin: 0;  
         font-family: 'roboto';
@@ -350,7 +357,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
         background-color: $fond;
         .entrees{            
             h2{                
-                @include traitvert
+                @include traitvert;
             }
             animation: fadein 2s ease-in-out ;
         } 

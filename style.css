@@ -443,6 +443,45 @@ body #preloader #loader:after {
   background-color: #f2f2f2;
 }
 
+.menu .entrees {
+  -webkit-animation: fadein 2s ease-in-out;
+          animation: fadein 2s ease-in-out;
+}
+
+.menu .entrees h2 {
+  width: 60px;
+  padding-bottom: 8px;
+  font-family: 'roboto';
+  font-weight: lighter;
+  border-bottom: 4px solid #99e2d0;
+}
+
+.menu .plats {
+  -webkit-animation: fadein 4s ease-in-out;
+          animation: fadein 4s ease-in-out;
+}
+
+.menu .plats h2 {
+  width: 60px;
+  padding-bottom: 8px;
+  font-family: 'roboto';
+  font-weight: lighter;
+  border-bottom: 4px solid #99e2d0;
+}
+
+.menu .desserts {
+  -webkit-animation: fadein 6s ease-in-out;
+          animation: fadein 6s ease-in-out;
+}
+
+.menu .desserts h2 {
+  width: 60px;
+  padding-bottom: 8px;
+  font-family: 'roboto';
+  font-weight: lighter;
+  border-bottom: 4px solid #99e2d0;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
