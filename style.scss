@@ -25,10 +25,9 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
 $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
 
 @mixin bandeauimage {
-    height: 300px;
+    height: 300px;    
     background-position: center;
-    background-size: cover;
-    background-attachment: fixed; 
+    background-size:cover;     
 }
 @mixin imageresto {
     height: 200px;                 
@@ -348,7 +347,20 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
         background-color: $fond;
         border-radius: 40px 40px 0 0 ;
         margin-top: -50px ; 
-        background-color: $fond;     
+        background-color: $fond; 
+        .entrees{
+            animation: fadein 2s ease-in-out ;
+        } 
+        .plats{
+            animation: fadein 4s ease-in-out 1s;
+        }
+        .desserts{
+            animation: fadein 6s ease-in-out 2s ;
+        }
+        @keyframes fadein {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }      
             .titre{
                 width: 100%;            
                 display: flex;
