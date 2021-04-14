@@ -443,21 +443,6 @@ body #preloader #loader:after {
   background-color: #f2f2f2;
 }
 
-.menu .entrees {
-  -webkit-animation: fadein 2s ease-in-out;
-          animation: fadein 2s ease-in-out;
-}
-
-.menu .plats {
-  -webkit-animation: fadein 4s ease-in-out;
-          animation: fadein 4s ease-in-out;
-}
-
-.menu .desserts {
-  -webkit-animation: fadein 6s ease-in-out;
-          animation: fadein 6s ease-in-out;
-}
-
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
