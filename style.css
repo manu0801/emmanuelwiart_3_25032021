@@ -406,6 +406,7 @@ body #preloader #loader:after {
   height: 300px;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bandeau_image_ledelicedessens {
@@ -413,6 +414,7 @@ body #preloader #loader:after {
   height: 300px;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bandeau_image_lanoteenchantee {
@@ -420,6 +422,7 @@ body #preloader #loader:after {
   height: 300px;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bandeau_image_alafrancaise {
@@ -427,6 +430,7 @@ body #preloader #loader:after {
   height: 300px;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .menu {

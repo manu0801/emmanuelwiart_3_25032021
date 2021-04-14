@@ -27,7 +27,8 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
 @mixin bandeauimage {
     height: 300px;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
+    background-attachment: fixed; 
 }
 @mixin imageresto {
     height: 200px;                 
@@ -358,7 +359,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                 font-size: 2em;            
                 padding-top: 20px;
                 padding-right: 20px;
-                color: grey;                                 
+                color: grey;                                
             }       
             h2{
                 font-family: 'shrikhand';
