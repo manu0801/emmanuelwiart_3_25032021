@@ -26,30 +26,6 @@ body {
   margin: 0;
   font-family: 'roboto';
   position: relative;
-  /*.loader{
-        height: 100%;
-        position: absolute;
-        top: 100px;
-        left: 250px;
-        border: 16px solid blue;
-        border-radius: 50%;
-        border-top: 16px solid blue ;
-        border-right: 16px solid green ;
-        border-bottom: 16px solid red;
-        border-left: 16px solid pink;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-    }
-    @-webkit-keyframes spin{
-        0%{-webkit-transform: rotate(0deg);}
-        100%{-webkit-transform: rotate(360deg);}
-    }
-    @keyframes spin{
-        0%{transform: rotate(0deg);}
-        100%{transform: rotate(360deg);}
-    }*/
 }
 
 body #preloader {
@@ -60,11 +36,13 @@ body #preloader {
   height: 100%;
   z-index: 1;
   background-color: rgba(20, 16, 16, 0.8);
+  -webkit-animation: disparition 1s 3s ease-in-out forwards;
+          animation: disparition 1s 3s ease-in-out forwards;
 }
 
-body #loader {
+body #preloader #loader {
   display: block;
-  position: relative;
+  position: absolute;
   left: 50%;
   top: 50%;
   width: 150px;
@@ -77,7 +55,7 @@ body #loader {
   animation: spin 2s linear infinite;
 }
 
-body #loader:before {
+body #preloader #loader:before {
   content: "";
   position: absolute;
   top: 5px;
@@ -91,7 +69,7 @@ body #loader:before {
   animation: spin 3s linear infinite;
 }
 
-body #loader:after {
+body #preloader #loader:after {
   content: "";
   position: absolute;
   top: 15px;
@@ -124,6 +102,32 @@ body #loader:after {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes disparition {
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes disparition {
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -218,6 +222,13 @@ body #loader:after {
   border-radius: 25px;
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reserve a .explorez:hover {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#bc9de4), to(#e46cc0));
+  background-image: linear-gradient(to top left, #bc9de4, #e46cc0);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .fonctionnement {
@@ -495,8 +506,25 @@ body #loader:after {
   font-size: 0.8em;
 }
 
-.menu .commander {
-  margin: 50px auto 60px;
+.menu .boutoncommander {
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu .boutoncommander a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu .boutoncommander a .commander {
   width: 200px;
   height: 50px;
   position: relative;
@@ -517,9 +545,11 @@ body #loader:after {
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.menu .commander a {
-  text-decoration: none;
-  color: white;
+.menu .boutoncommander a .commander:hover {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#bc9de4), to(#e46cc0));
+  background-image: linear-gradient(to top left, #bc9de4, #e46cc0);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 footer {

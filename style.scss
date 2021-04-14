@@ -22,6 +22,7 @@ $secondaire: #ff79da;
 $tertiaire: #99e2d0;
 $fond: #f2f2f2;
 $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
+$boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
 
 @mixin bandeauimage {
     height: 300px;
@@ -56,7 +57,10 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
     border-radius: 25px; 
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); 
 }
-
+@mixin buttonpurpleclear{
+    background-image: $boutonvioletclair;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
     body{
         margin: 0;  
         font-family: 'roboto';
@@ -69,10 +73,11 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
             height: 100%;
             z-index: 1;
             background-color:rgba(20, 16, 16, 0.8);
-        }         
+            animation: disparition 1s 3s ease-in-out forwards ;
+                
         #loader {
             display: block;
-            position: relative;            
+            position: absolute;            
             left: 50%;
             top: 50%;
             width: 150px;
@@ -134,31 +139,19 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
                 transform: rotate(360deg);
             }
         }
-        
-        /*.loader{
-        height: 100%;
-        position: absolute;
-        top: 100px;
-        left: 250px;
-        border: 16px solid blue;
-        border-radius: 50%;
-        border-top: 16px solid blue ;
-        border-right: 16px solid green ;
-        border-bottom: 16px solid red;
-        border-left: 16px solid pink;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-    }
-    @-webkit-keyframes spin{
-        0%{-webkit-transform: rotate(0deg);}
-        100%{-webkit-transform: rotate(360deg);}
-    }
-    @keyframes spin{
-        0%{transform: rotate(0deg);}
-        100%{transform: rotate(360deg);}
-    }*/   
+        @keyframes disparition{
+            5%{
+                opacity: 1;
+            }
+            90%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        }
     }
     
 
@@ -214,6 +207,9 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
                 color: white;
                 .explorez {
                 @include buttonpurple
+            }
+            .explorez:hover{
+                @include buttonpurpleclear
             }
             }
     }
@@ -398,14 +394,24 @@ $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
                     font-size: 0.8em;
                 }
             } 
-            .commander{
-                margin: 50px auto 60px ;
-                @include buttonpurple;
-            a {
-                text-decoration: none;
-                color: white;                
-               }
-            }
+            .boutoncommander{
+                
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                        a {                        
+                            text-decoration: none;
+                            color: white;
+                                .commander {
+                                @include buttonpurple
+                                }
+                                .commander:hover{
+                                @include buttonpurpleclear
+                                }
+                        }
+
+                }      
             
     }
     
