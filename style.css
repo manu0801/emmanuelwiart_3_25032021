@@ -1,27 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'roboto';
-  src: url(font/Roboto-Black.ttf);
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url(font/Roboto-Light.ttf);
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url(font/Roboto-Bold.ttf);
-  font-weight: bolder;
-}
-
-@font-face {
-  font-family: 'shrikhand';
-  src: url(font/Shrikhand-Regular.ttf);
-}
-
 body {
   margin: 0;
   font-family: 'roboto';
@@ -162,6 +139,7 @@ body #preloader #loader:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 400;
 }
 
 .localisation .fa-map-marker-alt {
@@ -188,13 +166,14 @@ body #preloader #loader:after {
 
 .reserve h1 {
   text-align: center;
+  font-weight: 700;
   font-size: 1.8rem;
   margin: 0;
 }
 
 .reserve p {
   text-align: center;
-  font-weight: normal;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -246,6 +225,10 @@ body #preloader #loader:after {
   color: black;
 }
 
+.fonctionnement a :hover .fas {
+  color: #9356dc;
+}
+
 .fonctionnement .fonction {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -253,6 +236,7 @@ body #preloader #loader:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 700;
   padding: 10px;
   margin: 20px;
   border-radius: 15px;
@@ -355,14 +339,14 @@ body #preloader #loader:after {
 .restaurants .card .info h3 {
   font-size: 1em;
   margin: 10px;
+  font-weight: 700;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .restaurants .card .info h4 {
   font-size: 0.8em;
-  font-weight: lighter;
-  font-weight: 200;
+  font-weight: 400;
   margin: 10px;
   margin-top: 5px;
 }
@@ -454,6 +438,7 @@ body #preloader #loader:after {
   font-family: 'roboto';
   font-weight: lighter;
   border-bottom: 4px solid #99e2d0;
+  font-weight: 700;
 }
 
 .menu .plats {
@@ -467,6 +452,7 @@ body #preloader #loader:after {
   font-family: 'roboto';
   font-weight: lighter;
   border-bottom: 4px solid #99e2d0;
+  font-weight: 700;
 }
 
 .menu .desserts {
@@ -480,6 +466,7 @@ body #preloader #loader:after {
   font-family: 'roboto';
   font-weight: lighter;
   border-bottom: 4px solid #99e2d0;
+  font-weight: 700;
 }
 
 @-webkit-keyframes fadein {
@@ -502,6 +489,7 @@ body #preloader #loader:after {
 
 .menu .titre {
   width: 100%;
+  font-family: 'shrikhand';
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,15 +533,21 @@ body #preloader #loader:after {
 
 .menu .plat h3 {
   font-size: 1em;
+  font-weight: 700;
   margin: 10px;
   margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu .plat h4 {
   font-size: 0.9em;
-  font-family: 'Roboto-Light';
-  font-weight: 200;
+  font-weight: 300;
   margin: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu .plat .prix {
@@ -617,7 +611,7 @@ footer h3 {
   color: white;
   font-family: 'shrikhand';
   padding: 20px;
-  font-weight: lighter;
+  font-weight: 300;
   margin: 0;
 }
 
@@ -634,7 +628,7 @@ footer li {
 footer a {
   text-decoration: none;
   color: white;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 footer .fas {
