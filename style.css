@@ -351,13 +351,30 @@ body #preloader #loader:after {
   margin-top: 5px;
 }
 
-.restaurants .card .info .heart {
+.restaurants .card .info .far {
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 1.5em;
   font-weight: 200;
   color: grey;
+}
+
+.restaurants .card .info .fas {
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  position: absolute;
+  background: -webkit-gradient(linear, right bottom, left top, from(#9356dc), to(#ff79da));
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+
+.restaurants .card .info .fas:hover {
+  opacity: 1;
 }
 
 .restaurants .card .divimg2 {
@@ -421,6 +438,7 @@ body #preloader #loader:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
   background-color: #f2f2f2;
   border-radius: 40px 40px 0 0;
   margin-top: -50px;
@@ -499,11 +517,29 @@ body #preloader #loader:after {
   border-radius: 40px 40px 0 0;
 }
 
-.menu .fa-heart {
+.menu .far {
+  position: absolute;
   font-size: 2em;
-  padding-top: 20px;
-  padding-right: 20px;
+  top: 20px;
+  right: 40px;
   color: grey;
+}
+
+.menu .fas {
+  font-size: 2em;
+  top: 20px;
+  right: 40px;
+  position: absolute;
+  background: -webkit-gradient(linear, right bottom, left top, from(#9356dc), to(#ff79da));
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+
+.menu .fas:hover {
+  opacity: 1;
 }
 
 .menu h2 {
