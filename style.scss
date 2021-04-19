@@ -3,12 +3,12 @@ $secondaire: #ff79da;
 $tertiaire: #99e2d0;
 $fond: #f2f2f2;
 $boutonviolet: linear-gradient(to top left, $primaire, $secondaire) ;
-$boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
+$boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
 
 @mixin bandeauimage {
-    height: 300px;    
+    height: 300px;
     background-position: center;
-    background-size:cover;     
+    background-size: cover;    
 }
 @mixin imageresto {
     height: 200px;                 
@@ -28,15 +28,14 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
 }
 @mixin buttonpurple {
     width: 200px;
-    height: 50px;
-    position: relative;                        
+    height: 50px;                           
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     background-image: $boutonviolet;
     border-radius: 25px; 
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); 
 }
 @mixin buttonpurpleclear{
     background-image: $boutonvioletclair;
@@ -68,12 +67,11 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             width: 100%;
             height: 100%;
             z-index: 1;
-            background-color:rgba(20, 16, 16, 0.8);
-            animation: disparition 1s 3s ease-in-out forwards ;
-                
+            background-color:rgba(20, 16, 16, 0.8);            
+            animation: disparition 1s 3s ease-in-out forwards ;                 
         #loader {
             display: block;
-            position: absolute;            
+            position: relative;            
             left: 50%;
             top: 50%;
             width: 150px;
@@ -83,9 +81,9 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             border: 3px solid transparent;
             border-top-color: $primaire;
             -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;                      
         }
-        #loader:before {
+        #loader::before {
             content: "";
             position: absolute;
             top: 5px;
@@ -94,11 +92,11 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             bottom: 5px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: $secondaire;
+            border-top-color: $secondaire; 
             -webkit-animation: spin 3s linear infinite;
-            animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;            
         }
-        #loader:after {
+        #loader::after {
             content: "";
             position: absolute;
             top: 15px;
@@ -107,9 +105,9 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             bottom: 15px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: $tertiaire;
+            border-top-color: $tertiaire; 
             -webkit-animation: spin 1.5s linear infinite;
-            animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;            
         }
         @-webkit-keyframes spin {
             0%   {
@@ -133,7 +131,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                 -webkit-transform: rotate(360deg);
                 -ms-transform: rotate(360deg);
                 transform: rotate(360deg);
-            }
+            }                   
         }
         @keyframes disparition{
             5%{
@@ -146,9 +144,9 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                 opacity: 0;
                 visibility: hidden;
             }
-        }
-        }
-    }  
+        }        
+    }
+    }   
     /*fleche sur page de menu des restaurants*/
     .fleche_retour{
         margin-left: 15px;
@@ -171,7 +169,6 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: 400;
             .fa-map-marker-alt{            
                 padding-right: 15px;
             }
@@ -186,24 +183,25 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
         padding-bottom: 30px;
             h1 {
                 text-align: center;
-                font-weight: 700;
                 font-size: 1.8rem;
                 margin: 0;
             }
             p {
                 text-align: center;
-                font-weight: 400;
+                font-weight: normal;
                 margin: 0;            
-            }            
-            a {            
+            }
+            
+            a {
+            
                 text-decoration: none;
                 color: white;
-                    .explorez {
-                    @include buttonpurple
-                }
-                .explorez:hover{
-                    @include buttonpurpleclear
-                }
+                .explorez {
+                @include buttonpurple
+            }
+            .explorez:hover{
+                @include buttonpurpleclear
+            }
             }
     }
     .fonctionnement{
@@ -225,7 +223,6 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             .fonction{
                 display: flex;
                 align-items: center;
-                font-weight: 700;
                 padding: 10px;
                 margin: 20px;
                 border-radius: 15px;
@@ -283,19 +280,19 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                         background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
                         @include imageresto                        
                         }
-                    .info{            
-                        padding: 10px;
-                        position: relative;                    
+                .info{            
+                    padding: 10px;
+                    position: relative;                    
                         h3{
                             font-size: 1em;
                             margin: 10px;
-                            font-weight: 700;
                             margin-bottom: 0;
                             margin-top: 0;
                         }
                         h4{
                             font-size: 0.8em;
-                            font-weight: 400;
+                            font-weight: lighter;
+                            font-weight: 200;
                             margin: 10px;
                             margin-top: 5px;
                         } 
@@ -315,7 +312,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                         } 
                         .fas:hover{
                             opacity: 1;
-                        }              
+                        }                     
                     }           
                 .divimg2{
                     background: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
@@ -330,7 +327,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
                     @include imageresto
                 } 
         }
-}       
+    }       
     
     /*pages des restaurants*/
     .bandeau_image_lapalettedugout{        
@@ -351,42 +348,36 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
     }
     .menu{        
         display: flex;
-        flex-direction: column; 
-        position: relative;      
+        flex-direction: column;
+        position: relative;       
         background-color: $fond;
         border-radius: 40px 40px 0 0 ;
         margin-top: -50px ; 
         background-color: $fond;
-        .entrees{            
-            h2{                
-                @include traitvert;
-                font-weight: 700;
-            }
-            animation: fadein 2s ease-in-out ;
-        } 
-        .plats{
-            h2{
-               
-                @include traitvert; 
-                  font-weight: 700;             
-            }
-            animation: fadein 4s ease-in-out ;
-        }        
         .desserts{
             h2{
-                
-                @include traitvert; 
-                 font-weight: 700;              
+                @include traitvert;                
             }
              animation: fadein 6s ease-in-out ;           
+        }
+        .plats{
+            h2{
+                @include traitvert;               
+            }
+            animation: fadein 4s ease-in-out ;
+        }
+        .entrees{            
+            h2{                
+                @include traitvert
+            }
+            animation: fadein 2s ease-in-out ;
         }        
         @keyframes fadein {
             from{opacity: 0;}
             to{opacity: 1;}
-        }      
+        }    
             .titre{
-                width: 100%; 
-                font-family: 'shrikhand';           
+                width: 100%;            
                 display: flex;
                 justify-content: space-between;
                 border-radius: 40px 40px 0 0 ;                                 
@@ -406,7 +397,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             }
             .fas:hover{
                 opacity: 1;
-            }
+            }            
             h2{
                 font-family: 'shrikhand';
                 margin-left: 10px;                  
@@ -416,64 +407,111 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             }
             .plat{
                 display: flex;
-                flex-direction: column;
+                flex-direction: column;                
                 position: relative;
                 margin: 10px;
                 border-radius: 15px;
                 background-color: white;
                 box-shadow: 0px 5px 10px rgba(0 , 0 , 0 , 0.2);
-                h3{
-                    font-size: 1em;
-                    font-weight: 700;
-                    margin: 10px;
-                    margin-bottom: 0;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                h4{
-                    font-size: 0.9em;
-                    font-weight: 300;
-                    margin: 10px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                .prix{
+                overflow: hidden;
+                
+                .check{
+                    display: flex;
+                    text-align: center;
+                    
                     position: absolute;
+                    right: -100px;
+                    border-radius: 0 15px 15px 0;
+                    background-color: $tertiaire;
+                    width: 80px;
+                    height: 67px;
+                    animation: all 2s;                                     
+                    .far{
+                        color: white;
+                    }                    
+                }
+                 .prix{
+                    position: absolute;                    
                     top: 40px;
                     right: 20px;
                     font-size: 0.8em;
+                    font-weight: 700;                                       
+                } 
+                 .intitule{
+                     width: 80%;
+                    h3{                                      
+                        font-size: 1em;
+                        margin: 10px;
+                        margin-bottom: 0;                    
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;                    
+                    }
+                    h4{                                        
+                        font-size: 0.9em;
+                        font-family: 'roboto';
+                        font-weight: 300;                    
+                        margin: 10px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;           
+                    }                
+                }           
+            }
+                .plat:hover .check{
+                    animation: apparition 2s ease-out forwards;
+                    }
+                @keyframes apparition{
+                    to{transform: translateX(-100px);}
+                    from{transform: translateX(100px);}
+                } 
+                .plat:hover .far{
+                    animation: rotation 0.8s ease-in-out 1s;
                 }
-            } 
-            .boutoncommander{
-                
+                @keyframes rotation{
+                    from{transform: rotate(0deg);}
+                    to{transform: rotate(-360deg);}
+                }                        
+                .plat:hover .prix{
+                     animation: decallage 2s ease-in-out forwards;
+                    }
+                @keyframes decallage{
+                    from{right: 20px;}
+                    to{right:100px}
+                    }                   
+                .plat:hover .intitule{
+                    animation: reduction 2s ease-in-out forwards;
+                    }
+                @keyframes reduction{
+                    from{width: 80%;}
+                    to{width: 50%;}
+                    } 
+                    .boutoncommander{                
                 height: 150px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                        a {                        
-                            text-decoration: none;
-                            color: white;
-                                .commander {
-                                @include buttonpurple
-                                }
-                                .commander:hover{
-                                @include buttonpurpleclear
-                                }
-                        }
+                    a {                        
+                        text-decoration: none;
+                        color: white;
+                            .commander {
+                               @include buttonpurple
+                            }
+                            .commander:hover{
+                            @include buttonpurpleclear
+                            }
+                    }
 
-                }      
-            
-    }
-    
+                }
+        } 
+
     footer{
         background-color: rgb(44, 42, 42);
             h3{
                 color: white;
                 font-family: 'shrikhand';
                 padding: 20px;
-                font-weight: 300;
+                font-weight: lighter;
                 margin: 0;
             }
             ul{
@@ -487,7 +525,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             a{
                 text-decoration: none;
                 color: white;
-                font-weight: 300;            
+                font-weight: lighter;            
             }
             .fas{    
                 padding-right: 10px;
@@ -495,4 +533,4 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e46cc0);
             .fa-hands-helping{
                 font-size: 0.7em;
             }
-    }
+        }
