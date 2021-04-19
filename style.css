@@ -60,7 +60,7 @@ body #preloader #loader::after {
   animation: spin 1.5s linear infinite;
 }
 
-@-webkit-keyframes spin {
+@keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -71,7 +71,7 @@ body #preloader #loader::after {
   }
 }
 
-@keyframes spin {
+@-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -370,7 +370,26 @@ body #preloader #loader::after {
 }
 
 .restaurants .card .info .fas:hover {
-  opacity: 1;
+  -webkit-animation: coeur 1s ease-in-out forwards;
+          animation: coeur 1s ease-in-out forwards;
+}
+
+@-webkit-keyframes coeur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes coeur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .restaurants .card .divimg2 {
@@ -531,7 +550,17 @@ body #preloader #loader::after {
 }
 
 .menu .fas:hover {
-  opacity: 1;
+  -webkit-animation: coeur 1s ease-in-out forwards;
+          animation: coeur 1s ease-in-out forwards;
+}
+
+@keyframes coeur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .menu h2 {

@@ -109,6 +109,19 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
             -webkit-animation: spin 1.5s linear infinite;
             animation: spin 1.5s linear infinite;            
         }
+        @keyframes spin {
+             0%   {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }                   
+        }  
+
         @-webkit-keyframes spin {
             0%   {
                 -webkit-transform: rotate(0deg);
@@ -120,19 +133,8 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                 -ms-transform: rotate(360deg);
                 transform: rotate(360deg);
             }
-        }
-        @keyframes spin {
-            0%   {
-                -webkit-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-            100% {
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-                transform: rotate(360deg);
-            }                   
-        }
+           
+        }        
         @keyframes disparition{
             5%{
                 opacity: 1;
@@ -198,10 +200,10 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                 color: white;
                 .explorez {
                 @include buttonpurple
-            }
-            .explorez:hover{
-                @include buttonpurpleclear
-            }
+                }
+                .explorez:hover{
+                    @include buttonpurpleclear
+                }
             }
     }
     .fonctionnement{
@@ -311,7 +313,12 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                             @include coeurviolet
                         } 
                         .fas:hover{
-                            opacity: 1;
+                            animation: coeur 1s ease-in-out forwards;                            
+                        }
+                        @keyframes coeur{
+                            0%{opacity: 0;}
+                            100%{opacity: 1;}
+
                         }                     
                     }           
                 .divimg2{
@@ -327,8 +334,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                     @include imageresto
                 } 
         }
-    }       
-    
+    }    
     /*pages des restaurants*/
     .bandeau_image_lapalettedugout{        
         background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
@@ -396,8 +402,13 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                 @include coeurviolet   
             }
             .fas:hover{
-                opacity: 1;
-            }            
+                animation: coeur 1s ease-in-out forwards;                            
+            }
+            @keyframes coeur{
+                0%{opacity: 0;}
+                100%{opacity: 1;}
+
+            }          
             h2{
                 font-family: 'shrikhand';
                 margin-left: 10px;                  
@@ -417,8 +428,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
                 
                 .check{
                     display: flex;
-                    text-align: center;
-                    
+                    text-align: center;                    
                     position: absolute;
                     right: -100px;
                     border-radius: 0 15px 15px 0;
