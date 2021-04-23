@@ -33,7 +33,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-image: $boutonviolet;
+    background: $boutonviolet;
     border-radius: 25px; 
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); 
 }
@@ -56,19 +56,19 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
     color:transparent;
     opacity: 0;             
 }
-    body{
-        margin: 0;  
-        font-family: 'roboto';
-        position: relative;
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-color:rgba(20, 16, 16, 0.8);            
-            animation: disparition 1s 3s ease-in-out forwards ;                 
+body{
+    margin: 0;  
+    font-family: 'roboto';
+    position: relative;
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color:rgba(20, 16, 16, 0.8);            
+        animation: disparition 1s 3s ease-in-out forwards ;                 
         #loader {
             display: block;
             position: relative;            
@@ -82,7 +82,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
             border-top-color: $primaire;
             -webkit-animation: spin 2s linear infinite;
             animation: spin 2s linear infinite;                      
-        }
+            }
         #loader::before {
             content: "";
             position: absolute;
@@ -95,7 +95,7 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
             border-top-color: $secondaire; 
             -webkit-animation: spin 3s linear infinite;
             animation: spin 3s linear infinite;            
-        }
+            }
         #loader::after {
             content: "";
             position: absolute;
@@ -108,439 +108,440 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
             border-top-color: $tertiaire; 
             -webkit-animation: spin 1.5s linear infinite;
             animation: spin 1.5s linear infinite;            
-        }
+            }
         @keyframes spin {
-             0%   {
+            0% {
                 -webkit-transform: rotate(0deg);
                 -ms-transform: rotate(0deg);
                 transform: rotate(0deg);
-            }
+                }
             100% {
                 -webkit-transform: rotate(360deg);
                 -ms-transform: rotate(360deg);
                 transform: rotate(360deg);
-            }                   
-        }  
-
+                }                   
+            } 
         @-webkit-keyframes spin {
             0%   {
                 -webkit-transform: rotate(0deg);
                 -ms-transform: rotate(0deg);
                 transform: rotate(0deg);
-            }
+                }
             100% {
                 -webkit-transform: rotate(360deg);
                 -ms-transform: rotate(360deg);
                 transform: rotate(360deg);
-            }
+                }
            
-        }        
+            }        
         @keyframes disparition{
             5%{
                 opacity: 1;
-            }
+                }
             90%{
                 opacity: 1;
-            }
+                }
             100%{
                 opacity: 0;
                 visibility: hidden;
-            }
-        }        
-    }
+                }
+            }        
+        }
     }   
     /*fleche sur page de menu des restaurants*/
-    .fleche_retour{
-        margin-left: 15px;
-        padding-top: 15px;
-        position: absolute;        
-            .fa-arrow-left{
-                font-size: 1.5em;
-                color: black;
-            }        
+.fleche_retour{
+    margin-left: 15px;
+    padding-top: 15px;
+    position: absolute;        
+    .fa-arrow-left{
+        font-size: 1.5em;
+        color: black;
+        }        
     }
     /*logo commun à toutes les pages*/
-    .logo{
-        font-family: 'shrikhand'; 
-        text-align: center;          
+.logo{
+    font-family: 'shrikhand'; 
+    text-align: center;          
     } 
     /*page d'acceuil*/   
-    .localisation{
-        background-color: rgb(231, 225, 225);
-        border-top: 2px solid grey;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-            .fa-map-marker-alt{            
-                padding-right: 15px;
-            }
+.localisation{
+    background-color: rgb(231, 225, 225);
+    border-top: 2px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .fa-map-marker-alt{            
+        padding-right: 15px;
+        }
     }
-    .reserve {
+.reserve {
+    background-color: $fond;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin: 0;
+        }
+    p {
+        text-align: center;
+        font-weight: normal;
+        margin: 0;            
+        }            
+    a {            
+        text-decoration: none;
+        color: white;
+        .explorez {
+            @include buttonpurple
+            }
+        .explorez:hover{
+            @include buttonpurpleclear
+            }
+        }
+    }
+.fonctionnement{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    h1{
+        margin-left: 20px;
+        font-size: 1.5em;
+        }
+    a{
+        text-decoration: none;
+        color: black;
+        }
+    a :hover{
+        .fas{
+            color: $primaire;
+            }
+        }
+    .fonction{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 15px;
         background-color: $fond;
-        height: 250px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        .fas{
+            color: grey;
+            }
+        .icon{
+            padding: 10px 15px;
+            }
+        }        
+    .choix{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        padding-bottom: 30px;
-            h1 {
-                text-align: center;
-                font-size: 1.8rem;
-                margin: 0;
-            }
-            p {
-                text-align: center;
-                font-weight: normal;
-                margin: 0;            
-            }
-            
-            a {
-            
-                text-decoration: none;
-                color: white;
-                .explorez {
-                @include buttonpurple
-                }
-                .explorez:hover{
-                    @include buttonpurpleclear
-                }
-            }
-    }
-    .fonctionnement{
-        margin-top: 40px;
-        margin-bottom: 50px;
-            h1{
-                margin-left: 20px;
-                font-size: 1.5em;
-            }
-            a{
-                text-decoration: none;
-                color: black;
-            }
-            a :hover{
-                .fas{
-                    color: $primaire;
-                }
-            }
-            .fonction{
-                display: flex;
-                align-items: center;
-                padding: 10px;
-                margin: 20px;
-                border-radius: 15px;
-                background-color: $fond;
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-                    .fas{
-                        color: grey;
-                    }
-                    .icon{
-                        padding: 10px 15px;
-                    }
-            }        
-            .choix{
-                display: flex;
-                background-color: $primaire;
-                width: 20px;
-                position: absolute;
-                margin-left: -20px;
-                justify-content: center;
-                border-radius: 25px;
-                color: white;
-                font-weight: lighter;
-            }
+        background-color: $primaire;
+        width: 20px;
+        position: absolute;
+        margin-left: -20px;
+        justify-content: center;
+        border-radius: 25px;
+        color: white;
+        font-weight: lighter;
+        }
     }     
        /*restaurants pages d'acceuil*/
-    .restaurants{
-        width: auto;
-        background-color: $fond;
+.restaurants{
+    width: auto;
+    background-color: $fond;
+    display: flex;
+    flex-direction: column;
+    h1{
+        margin-left: 20px;
+        margin-top: 40px;
+        font-size: 1.5em;
+        }
+    a{
+        text-decoration: none;
+        color: black;
+        }
+    .card{
+        width: auto;        
         display: flex;
         flex-direction: column;
-            h1{
-                margin-left: 20px;
-                margin-top: 40px;
-                font-size: 1.5em;
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
+        .patch{
+            @include patchimage
             }
-            a{
-                text-decoration: none;
-                color: black;
+        .divimg1{
+            background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+            @include imageresto                        
             }
-            .card{
-            width: auto;        
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            margin-bottom: 20px;
-            margin-left: 10px;
-            margin-right: 10px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
-                .patch{
-                    @include patchimage
-                    }
-                    .divimg1{
-                        background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-                        @include imageresto                        
-                        }
-                .info{            
-                    padding: 10px;
-                    position: relative;                    
-                        h3{
-                            font-size: 1em;
-                            margin: 10px;
-                            margin-bottom: 0;
-                            margin-top: 0;
-                        }
-                        h4{
-                            font-size: 0.8em;
-                            font-weight: lighter;
-                            font-weight: 200;
-                            margin: 10px;
-                            margin-top: 5px;
-                        } 
-                        .far{
-                            position: absolute;
-                            top: 20px;
-                            right: 20px;
-                            font-size: 1.5em;
-                            font-weight: 200;
-                            color: grey;
-                        } 
-                        .fas{
-                            top: 20px;
-                            right: 20px;
-                            font-size: 1.5em;
-                            @include coeurviolet
-                        } 
-                        .fas:hover{
-                            animation: coeur 1s ease-in-out forwards;                            
-                        }
-                        @keyframes coeur{
-                            0%{opacity: 0;}
-                            100%{opacity: 1;}
-
-                        }                     
-                    }           
-                .divimg2{
-                    background: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-                    @include imageresto
-                    }
-                .divimg3{
-                    background: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-                    @include imageresto
+        .info{            
+            padding: 10px;
+            position: relative;                    
+            h3{
+                font-size: 1em;
+                margin: 10px;
+                margin-bottom: 0;
+                margin-top: 0;
                 }
-                .divimg4{
-                    background: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-                    @include imageresto
+            h4{
+                font-size: 0.8em;
+                font-weight: lighter;
+                font-weight: 200;
+                margin: 10px;
+                margin-top: 5px;
                 } 
-        }
-    }    
-    /*pages des restaurants*/
-    .bandeau_image_lapalettedugout{        
-        background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-        @include bandeauimage 
-    }
-    .bandeau_image_ledelicedessens{
-        background-image: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-        @include bandeauimage
-    }
-    .bandeau_image_lanoteenchantee{
-        background-image: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-        @include bandeauimage 
-    }
-    .bandeau_image_alafrancaise{
-        background-image: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-        @include bandeauimage
-    }
-    .menu{        
-        display: flex;
-        flex-direction: column;
-        position: relative;       
-        background-color: $fond;
-        border-radius: 40px 40px 0 0 ;
-        margin-top: -50px ; 
-        background-color: $fond;
-        .desserts{
-            h2{
-                @include traitvert;                
-            }
-             animation: fadein 6s ease-in-out ;           
-        }
-        .plats{
-            h2{
-                @include traitvert;               
-            }
-            animation: fadein 4s ease-in-out ;
-        }
-        .entrees{            
-            h2{                
-                @include traitvert
-            }
-            animation: fadein 2s ease-in-out ;
-        }        
-        @keyframes fadein {
-            from{opacity: 0;}
-            to{opacity: 1;}
-        }    
-            .titre{
-                width: 100%;            
-                display: flex;
-                justify-content: space-between;
-                border-radius: 40px 40px 0 0 ;                                 
-            } 
             .far{
                 position: absolute;
-                font-size: 2em;            
                 top: 20px;
-                right: 40px;
-                color: grey;                                                             
-            } 
+                right: 20px;
+                font-size: 1.5em;
+                font-weight: 200;
+                color: grey;
+                } 
             .fas{
-                font-size: 2em;
                 top: 20px;
-                right: 40px;
-                @include coeurviolet   
-            }
+                right: 20px;
+                font-size: 1.5em;
+                @include coeurviolet
+                } 
             .fas:hover{
-                animation: coeur 1s ease-in-out forwards;                            
-            }
+                animation: coeur 1s ease-out forwards;                            
+                }
             @keyframes coeur{
                 0%{opacity: 0;}
                 100%{opacity: 1;}
-
-            }          
-            h2{
-                font-family: 'shrikhand';
-                margin-left: 10px;                  
+                }                     
+            }           
+        .divimg2{
+            background: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+            @include imageresto
             }
-            h3{
-                margin: 10px;                
+        .divimg3{
+            background: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+            @include imageresto
             }
-            .plat{
-                display: flex;
-                flex-direction: column;                
-                position: relative;
-                margin: 10px;
-                border-radius: 15px;
-                background-color: white;
-                box-shadow: 0px 5px 10px rgba(0 , 0 , 0 , 0.2);
-                overflow: hidden;
-                
-                .check{
-                    display: flex;
-                    text-align: center;                    
-                    position: absolute;
-                    right: -100px;
-                    border-radius: 0 15px 15px 0;
-                    background-color: $tertiaire;
-                    width: 80px;
-                    height: 67px;
-                    animation: all 2s;                                     
-                    .far{
-                        color: white;
-                    }                    
-                }
-                 .prix{
-                    position: absolute;                    
-                    top: 40px;
-                    right: 20px;
-                    font-size: 0.8em;
-                    font-weight: 700;                                       
-                } 
-                 .intitule{
-                     width: 80%;
-                    h3{                                      
-                        font-size: 1em;
-                        margin: 10px;
-                        margin-bottom: 0;                    
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;                    
-                    }
-                    h4{                                        
-                        font-size: 0.9em;
-                        font-family: 'roboto';
-                        font-weight: 300;                    
-                        margin: 10px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;           
-                    }                
-                }           
-            }
-                .plat:hover .check{
-                    animation: apparition 2s ease-out forwards;
-                    }
-                @keyframes apparition{
-                    to{transform: translateX(-100px);}
-                    from{transform: translateX(100px);}
-                } 
-                .plat:hover .far{
-                    animation: rotation 0.8s ease-in-out 1s;
-                }
-                @keyframes rotation{
-                    from{transform: rotate(0deg);}
-                    to{transform: rotate(-360deg);}
-                }                        
-                .plat:hover .prix{
-                     animation: decallage 2s ease-in-out forwards;
-                    }
-                @keyframes decallage{
-                    from{right: 20px;}
-                    to{right:100px}
-                    }                   
-                .plat:hover .intitule{
-                    animation: reduction 2s ease-in-out forwards;
-                    }
-                @keyframes reduction{
-                    from{width: 80%;}
-                    to{width: 50%;}
-                    } 
-                    .boutoncommander{                
-                height: 150px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                    a {                        
-                        text-decoration: none;
-                        color: white;
-                            .commander {
-                               @include buttonpurple
-                            }
-                            .commander:hover{
-                            @include buttonpurpleclear
-                            }
-                    }
-
-                }
-        } 
-
-    footer{
-        background-color: rgb(44, 42, 42);
-            h3{
-                color: white;
-                font-family: 'shrikhand';
-                padding: 20px;
-                font-weight: lighter;
-                margin: 0;
-            }
-            ul{
-                padding: 20px;
-                margin: 0;
-            }
-            li{
-                list-style-type: none;
-                padding-bottom: 10px;
-            }
-            a{
-                text-decoration: none;
-                color: white;
-                font-weight: lighter;            
-            }
-            .fas{    
-                padding-right: 10px;
-            }
-            .fa-hands-helping{
-                font-size: 0.7em;
-            }
+        .divimg4{
+            background: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+            @include imageresto
+            } 
         }
+    }    
+/*pages des restaurants*/
+.bandeau_image_lapalettedugout{        
+    background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    @include bandeauimage 
+    }
+.bandeau_image_ledelicedessens{
+    background-image: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+    @include bandeauimage
+    }
+.bandeau_image_lanoteenchantee{
+    background-image: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+    @include bandeauimage 
+    }
+.bandeau_image_alafrancaise{
+    background-image: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    @include bandeauimage
+    }
+.menu{        
+    display: flex;
+    flex-direction: column;
+    position: relative;       
+    background-color: $fond;
+    border-radius: 40px 40px 0 0 ;
+    margin-top: -50px ; 
+    background-color: $fond;
+    .desserts{
+        animation: fadein 6s ease-in-out ; 
+            h2{
+                @include traitvert;                
+            }                   
+        }
+    .plats{
+        animation: fadein 4s ease-in-out ;
+            h2{
+                @include traitvert;               
+            }            
+        }
+    .entrees{ 
+        animation: fadein 2s ease-in-out;           
+            h2{                
+                @include traitvert;
+            }            
+        }        
+    @keyframes fadein {
+        from{opacity: 0;}
+        to{opacity: 1;}
+        }    
+    .titre{
+        width: 100%;            
+        display: flex;
+        justify-content: space-between;
+        border-radius: 40px 40px 0 0 ;                                 
+        } 
+    .far{
+        position: absolute;
+        font-size: 2em;            
+        top: 20px;
+        right: 40px;
+        color: grey;                                                             
+        } 
+    .fas{
+        font-size: 2em;
+        top: 20px;
+        right: 40px;
+        @include coeurviolet   
+        }
+    .fas:hover{
+        animation: coeur 1s ease-out forwards;                            
+        }
+    @keyframes coeur{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+        }          
+    h2{
+        font-family: 'shrikhand';
+         margin-left: 10px;                  
+        }
+    h3{
+        margin: 10px;                
+        }
+    .plat{
+        display: flex;
+        flex-direction: column;                
+        position: relative;
+        margin: 10px;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0px 5px 10px rgba(0 , 0 , 0 , 0.2);
+        overflow: hidden;               
+        .check{
+            display: flex;                   
+            position: absolute;
+            right: -80px;
+            border-radius: 0 15px 15px 0;
+            background-color: $tertiaire;
+            width: 80px;
+            top: 0px;
+            bottom: 0px;
+            transition: all 2s ease;                 
+                .far{
+                    color: white;
+                    right: 25px;                        
+                    transition: all 2s ease;
+                    }                    
+            }
+        .prix{
+            position: absolute;                    
+            top: 40px;
+            right: 20px;
+            font-size: 0.8em;
+            font-weight: 700; 
+            transition: all 2s ease;                                      
+            }                
+        .intitule{ 
+            width: 80%;              
+            transition: all 2s ease;
+                h3{                                      
+                    font-size: 1em;
+                    margin: 10px;
+                    margin-bottom: 0;                    
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;                    
+                    }
+                h4{                                        
+                    font-size: 0.9em;
+                    font-family: 'roboto';
+                    font-weight: 300;                    
+                    margin: 10px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;           
+                    }                
+            }                         
+        }
+    .plat:hover .intitule{
+        width: 50%;
+        }
+    .plat:hover .prix{
+        right: 100px;
+        }
+    .plat:hover{
+        cursor: pointer;
+        } 
+    .plat:hover .far{
+        transform: rotate(-360deg);
+        }                    
+    .plat:hover .check{
+        right: 0px;
+        }                
+    .boutoncommander{                
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {                        
+            text-decoration: none;
+            color: white;
+            transition: all 1s ease;                                                                  
+            .commander {
+                overflow: hidden;
+                position: relative;
+                transition: all 1s ease;
+                @include buttonpurple;
+                &:hover{
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+                    }
+                }                        
+            }                           
+        .commander::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            background-color: white;
+            opacity: 0;
+            transition: all 2s;                                                                                
+            }
+        a:hover .commander::before{
+            opacity: 0.2;
+            }       
+        }
+}
+footer{
+    background-color: rgb(44, 42, 42);
+    h3{
+        color: white;
+        font-family: 'shrikhand';
+        padding: 20px;
+        font-weight: lighter;
+        margin: 0;
+        }
+    ul{
+        padding: 20px;
+        margin: 0;
+        }
+    li{
+        list-style-type: none;
+        padding-bottom: 10px;
+        }
+    a{
+        text-decoration: none;
+        color: white;
+        font-weight: lighter;            
+        }
+    .fas{    
+        padding-right: 10px;
+        }
+    .fa-hands-helping{
+        font-size: 0.7em;
+        }
+    }   
