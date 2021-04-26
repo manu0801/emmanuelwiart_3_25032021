@@ -56,6 +56,60 @@ $boutonvioletclair: linear-gradient(to top left, #bc9de4, #e280c5);
     color:transparent;
     opacity: 0;             
 }
+@mixin card{
+    width: auto;        
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2); 
+}
+@mixin info {
+    .info{            
+        padding: 10px;
+        position: relative;                    
+        h3{
+            font-size: 1em;
+            margin: 10px;
+            margin-bottom: 0;
+            margin-top: 0;
+            }
+        h4{
+            font-size: 0.8em;
+            font-weight: lighter;
+            font-weight: 200;
+            margin: 10px;
+            margin-top: 5px;
+            }
+            .far{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 1.5em;
+                font-weight: 200;
+                color: grey;
+                } 
+            .fas{
+                top: 20px;
+                right: 20px;
+                font-size: 1.5em;
+                @include coeurviolet
+                } 
+            .fas:hover{
+                animation: coeur 1s ease-out forwards;                            
+                }
+            @keyframes coeur{
+                0%{opacity: 0;}
+                100%{opacity: 1;}
+                }             
+                    
+        } 
+}
+/*body et loader*/
 body{
     margin: 0;  
     font-family: 'roboto';
@@ -131,8 +185,7 @@ body{
                 -webkit-transform: rotate(360deg);
                 -ms-transform: rotate(360deg);
                 transform: rotate(360deg);
-                }
-           
+                }           
             }        
         @keyframes disparition{
             5%{
@@ -148,7 +201,7 @@ body{
             }        
         }
     }   
-    /*fleche sur page de menu des restaurants*/
+/*fleche sur page de menu des restaurants*/
 .fleche_retour{
     margin-left: 15px;
     padding-top: 15px;
@@ -158,12 +211,12 @@ body{
         color: black;
         }        
     }
-    /*logo commun à toutes les pages*/
+/*logo commun à toutes les pages*/
 .logo{
     font-family: 'shrikhand'; 
     text-align: center;          
     } 
-    /*page d'acceuil*/   
+/*page d'acceuil*/   
 .localisation{
     background-color: rgb(231, 225, 225);
     border-top: 2px solid grey;
@@ -205,19 +258,24 @@ body{
     }
 .fonctionnement{
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 50px;   
     h1{
         margin-left: 20px;
-        font-size: 1.5em;
-        }
+        font-size: 1.5em;        
+        @media (min-width: 780px){
+            width: 25%;
+            text-align: center;
+            margin: auto;            
+        }       
+        }  
     a{
         text-decoration: none;
         color: black;
-        }
-    a :hover{
-        .fas{
-            color: $primaire;
-            }
+        }    
+    .boutonfonction{
+        @media (min-width: 780px){
+            display: flex;
+            justify-content: space-evenly;
         }
     .fonction{
         display: flex;
@@ -225,13 +283,17 @@ body{
         padding: 10px;
         margin: 20px;
         border-radius: 15px;
-        background-color: $fond;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
         .fas{
             color: grey;
             }
         .icon{
             padding: 10px 15px;
+            }
+        }
+        a :hover{
+        .fas{
+            color: $primaire;
             }
         }        
     .choix{
@@ -245,93 +307,112 @@ body{
         color: white;
         font-weight: lighter;
         }
-    }     
-       /*restaurants pages d'acceuil*/
+    } 
+}    
+/*restaurants pages d'acceuil*/
 .restaurants{
     width: auto;
     background-color: $fond;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    @media (min-width: 780px){        
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 40px ;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }   
     h1{
         margin-left: 20px;
         margin-top: 40px;
-        font-size: 1.5em;
-        }
-    a{
-        text-decoration: none;
-        color: black;
-        }
-    .card{
-        width: auto;        
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        margin-bottom: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
-        .patch{
-            @include patchimage
+        font-size: 1.5em;    
+        @media (min-width: 780px){
+            width: 25%;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
             }
+        } 
+    .card{ 
+        @media (min-width: 780px){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }         
+    .palette{
+        @media screen and (min-width: 780px) {
+            width: 40%;
+        }
         .divimg1{
             background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
             @include imageresto                        
+            } 
+        @include card;      
+        a{
+        text-decoration: none;
+        color: black;        
+        }
+        .patch{
+            @include patchimage
+            }                   
+        @include info                     
+        }
+    .note{
+        @media (min-width: 780px){
+            width: 40%;
             }
-        .info{            
-            padding: 10px;
-            position: relative;                    
-            h3{
-                font-size: 1em;
-                margin: 10px;
-                margin-bottom: 0;
-                margin-top: 0;
-                }
-            h4{
-                font-size: 0.8em;
-                font-weight: lighter;
-                font-weight: 200;
-                margin: 10px;
-                margin-top: 5px;
-                } 
-            .far{
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 1.5em;
-                font-weight: 200;
-                color: grey;
-                } 
-            .fas{
-                top: 20px;
-                right: 20px;
-                font-size: 1.5em;
-                @include coeurviolet
-                } 
-            .fas:hover{
-                animation: coeur 1s ease-out forwards;                            
-                }
-            @keyframes coeur{
-                0%{opacity: 0;}
-                100%{opacity: 1;}
-                }                     
-            }           
         .divimg2{
             background: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
             @include imageresto
             }
+        @include card;        
+        a{
+        text-decoration: none;
+        color: black;        
+        }
+        .patch{
+            @include patchimage
+            }                   
+        @include info
+    }
+    .francaise{
+         @media (min-width: 780px){
+            width: 40%;
+        }
         .divimg3{
             background: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
             @include imageresto
             }
+        @include card;      
+        a{
+        text-decoration: none;
+        color: black;
+        }                   
+        @include info
+    }
+    .delice{
+        @media (min-width: 780px){
+            width: 40%;
+            }
         .divimg4{
             background: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
             @include imageresto
-            } 
+            }
+        @include card;        
+        a{
+        text-decoration: none;
+        color: black;        
+        }                   
+        @include info
         }
-    }    
+    }             
+}      
 /*pages des restaurants*/
+main{
+   @media (min-width: 780px){
+    width: 80%;
+    margin: auto;
+   }
+}
 .bandeau_image_lapalettedugout{        
     background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
     @include bandeauimage 
@@ -356,11 +437,17 @@ body{
     border-radius: 40px 40px 0 0 ;
     margin-top: -50px ; 
     background-color: $fond;
+     @media (min-width: 780px){        
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 40px ;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
     .desserts{
         animation: fadein 6s ease-in-out ; 
             h2{
                 @include traitvert;                
-            }                   
+            }              
         }
     .plats{
         animation: fadein 4s ease-in-out ;
@@ -398,6 +485,7 @@ body{
         @include coeurviolet   
         }
     .fas:hover{
+        cursor: pointer;
         animation: coeur 1s ease-out forwards;                            
         }
     @keyframes coeur{
@@ -419,7 +507,7 @@ body{
         border-radius: 15px;
         background-color: white;
         box-shadow: 0px 5px 10px rgba(0 , 0 , 0 , 0.2);
-        overflow: hidden;               
+        overflow: hidden;              
         .check{
             display: flex;                   
             position: absolute;
@@ -496,7 +584,7 @@ body{
                 transition: all 1s ease;
                 @include buttonpurple;
                 &:hover{
-                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
                     }
                 }                        
             }                           
@@ -518,6 +606,10 @@ body{
 }
 footer{
     background-color: rgb(44, 42, 42);
+    @media (min-width: 780px){
+        width: 80%;
+        margin: auto;
+       }
     h3{
         color: white;
         font-family: 'shrikhand';
@@ -544,4 +636,4 @@ footer{
     .fa-hands-helping{
         font-size: 0.7em;
         }
-    }   
+    }
